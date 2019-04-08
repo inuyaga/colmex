@@ -1,4 +1,4 @@
-#!/home/esteban/Escritorio/djago/COLMEX/clm_env/bin/python
+#!/home/esteban/Escritorio/djago/colmex/env_colmex/bin/python
 
 import sys
 import getopt

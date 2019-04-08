@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/esteban/Escritorio/djago/COLMEX/clm_env"
+VIRTUAL_ENV="/home/esteban/Escritorio/djago/colmex/env_colmex"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

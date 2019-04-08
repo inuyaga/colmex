@@ -1,4 +1,4 @@
-#!/home/esteban/Escritorio/djago/COLMEX/clm_env/bin/python3
+#!/home/esteban/Escritorio/djago/colmex/env_colmex/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
