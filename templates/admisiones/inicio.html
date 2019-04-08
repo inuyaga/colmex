@@ -1,0 +1,274 @@
+{% extends 'admin/base_colmex.html'%}
+{% block CONTENIDO %}
+<div class="container">
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="card border-primary">
+            <div class="card-header">
+                <h4>Datos generales del solicitante </h4>
+            </div>
+            <div class="card-body text-primary"">
+                <div class=" row">
+                <div class="col-sm">
+                    {{form.prospecto_liceciatura.label}}
+                    {{form.prospecto_liceciatura}}
+                    <small class="text-muted">{{form.prospecto_liceciatura.errors}}</small>
+                </div>
+                <div class="col-sm">
+                    {{form.prospecto_dia_interes.label}}
+                    {{form.prospecto_dia_interes}}
+                    <small class="text-muted">{{form.prospecto_dia_interes.errors}}</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{form.prospecto_nombre.label}}
+                    {{form.prospecto_nombre}}
+                    <small class="text-muted">{{form.prospecto_nombre.errors}}</small>
+                </div>
+                <div class="col-sm">
+                    {{form.prospecto_apelldo_m.label}}
+                    {{form.prospecto_apelldo_m}}
+                    <small class="text-muted">{{form.prospecto_apelldo_m.errors}}</small>
+                </div>
+                <div class="col-sm">
+                    {{form.prospecto_apelldo_p.label}}
+                    {{form.prospecto_apelldo_p}}
+                    <small class="text-muted">{{form.prospecto_apelldo_p.errors}}</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    {{form.prospecto_nacionalidad.label}}
+                    {{form.prospecto_nacionalidad}}
+                    <small class="text-muted">{{form.prospecto_nacionalidad.errors}}</small>
+                </div>
+                <div class="col-sm">
+                    {{form.prospecto_naciminto.label}}
+                    {{form.prospecto_naciminto}}
+                    <small class="text-muted">{{form.prospecto_naciminto.errors}}</small>
+                </div>
+                <div class="col-sm">
+                    {{form.prospecto_estado_civil.label}}
+                    {{form.prospecto_estado_civil}}
+                    <small class="text-muted">{{form.prospecto_estado_civil.errors}}</small>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="card border-primary">
+    <div class="card-header">
+        <h4>Domicilio de residencia</h4>
+
+    </div>
+    <div class="card-body text-primary"">
+                <div class=" row">
+        <div class="col-sm">
+            {{form.prospecto_calle.label}}
+            {{form.prospecto_calle}}
+            <small class="text-muted">{{form.prospecto_calle.errors}}</small>
+        </div>
+        <div class="col-sm">
+            {{form.prospecto_numero.label}}
+            {{form.prospecto_numero}}
+            <small class="text-muted">{{form.prospecto_numero.errors}}</small>
+        </div>
+        <div class="col-sm">
+            {{form.prospecto_colonia.label}}
+            {{form.prospecto_colonia}}
+            <small class="text-muted">{{form.prospecto_colonia.errors}}</small>
+        </div>
+        <div class="col-sm">
+            {{form.prospecto_ciudad.label}}
+            {{form.prospecto_ciudad}}
+            <small class="text-muted">{{form.prospecto_ciudad.errors}}</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{form.prospecto_cp.label}}
+            {{form.prospecto_cp}}
+            <small class="text-muted">{{form.prospecto_cp.errors}}</small>
+        </div>
+        <div class="col-sm">
+            {{form.prospecto_tel_casa.label}}
+            {{form.prospecto_tel_casa}}
+            <small class="text-muted">{{form.prospecto_tel_casa.errors}}</small>
+        </div>
+        <div class="col-sm">
+            {{form.prospecto_tel_celular.label}}
+            {{form.prospecto_tel_celular}}
+            <small class="text-muted">{{form.prospecto_tel_celular.errors}}</small>
+        </div>
+        <div class="col-sm">
+            {{form.prospecto_correo_p.label}}
+            {{form.prospecto_correo_p}}
+            <small class="text-muted">{{form.prospecto_correo_p.errors}}</small>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="card border-primary">
+    <div class="card-header">
+        <h4>Datos familiares</h4>
+        <h6 class="text-muted">En caso de emergencia:</h6>
+
+    </div>
+    <div class="card-body text-primary">
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_nombre_familiar.label}}
+                {{form.prospecto_nombre_familiar}}
+                <small class="text-muted">{{form.prospecto_nombre_familiar.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_parentesco_familiar.label}}
+                {{form.prospecto_parentesco_familiar}}
+                <small class="text-muted">{{form.prospecto_parentesco_familiar.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_telefono_familiar.label}}
+                {{form.prospecto_telefono_familiar}}
+                <small class="text-muted">{{form.prospecto_telefono_familiar.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_familiar_redes_social.label}}
+                {{form.prospecto_familiar_redes_social}}
+                <small class="text-muted">{{form.prospecto_familiar_redes_social.errors}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-primary">
+    <div class="card-header">
+        <h4>Datos académicos</h4>
+    </div>
+    <div class="card-body text-primary">
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_nivel_ingles.label}}
+                {{form.prospecto_nivel_ingles}}
+                <small class="text-muted">{{form.prospecto_nivel_ingles.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_nivel_estudios.label}}
+                {{form.prospecto_nivel_estudios}}
+                <small class="text-muted">{{form.prospecto_nivel_estudios.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_institucion.label}}
+                {{form.prospecto_institucion}}
+                <small class="text-muted">{{form.prospecto_institucion.errors}}</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_nombre_programa.label}}
+                {{form.prospecto_nombre_programa}}
+                <small class="text-muted">{{form.prospecto_nombre_programa.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_programa_inicio.label}}
+                {{form.prospecto_programa_inicio}}
+                <small class="text-muted">{{form.prospecto_programa_inicio.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_programa_termino.label}}
+                {{form.prospecto_programa_termino}}
+                <small class="text-muted">{{form.prospecto_programa_termino.errors}}</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_cedula.label}}
+                {{form.prospecto_cedula}}
+                <small class="text-muted">{{form.prospecto_cedula.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_cedula_carrera.label}}
+                {{form.prospecto_cedula_carrera}}
+                <small class="text-muted">{{form.prospecto_cedula_carrera.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_cedula_expedicion.label}}
+                {{form.prospecto_cedula_expedicion}}
+                <small class="text-muted">{{form.prospecto_cedula_expedicion.errors}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card border-primary">
+    <div class="card-header">
+        <h4>Experiencia Laboral</h4>
+    </div>
+    <div class="card-body text-primary">
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_qstion_trabaja.label}}
+                {{form.prospecto_qstion_trabaja}}
+                <small class="text-muted">{{form.prospecto_qstion_trabaja.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_empresa_nombre.label}}
+                {{form.prospecto_empresa_nombre}}
+                <small class="text-muted">{{form.prospecto_empresa_nombre.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_empresa_giro.label}}
+                {{form.prospecto_empresa_giro}}
+                <small class="text-muted">{{form.prospecto_empresa_giro.errors}}</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_empresa_puesto_ocupado.label}}
+                {{form.prospecto_empresa_puesto_ocupado}}
+                <small class="text-muted">{{form.prospecto_empresa_puesto_ocupado.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_empresa_telefono.label}}
+                {{form.prospecto_empresa_telefono}}
+                <small class="text-muted">{{form.prospecto_empresa_telefono.errors}}</small>
+            </div>
+            <div class="col-sm">
+                {{form.prospecto_emoresa_correo.label}}
+                {{form.prospecto_emoresa_correo}}
+                <small class="text-muted">{{form.prospecto_emoresa_correo.errors}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card border-primary">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body text-primary">
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_interes.label}}
+                {{form.prospecto_interes}}
+                <small class="text-muted">{{form.prospecto_interes.errors}}</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                {{form.prospecto_como_se_entero.label}}
+                {{form.prospecto_como_se_entero}}
+                <small class="text-muted">{{form.prospecto_como_se_entero.errors}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<input class="btn btn-success btn-lg btn-block" type="submit" value="Registrar">
+</form>
+</div>
+
+
+{% endblock CONTENIDO %}

@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>Panel de Administracion</title>
+  <!-- Icons-->
+  <link href="{% static 'node_modules/@coreui/icons/css/coreui-icons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'node_modules/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
+  <link href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %} " rel="stylesheet">
+  <link href="{% static 'node_modules/simple-line-icons/css/simple-line-icons.css' %} " rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href=" {% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'vendors/pace-progress/css/pace.min.css' %}" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics-->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+
+
+  {% block NAVBAR %}
+
+  <header class="app-header navbar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img class="navbar-brand-full" src="{% static "img/brand/logo.svg" %}" width="89" height="25" alt="CoreUI Logo">
+      <!-- <img class="navbar-brand-minimized" src="{% static "img/brand/sygnet.svg" %}" width="30" height="30" alt="CoreUI Logo"> -->
+    </a>
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="nav navbar-nav d-md-down-none">
+      <li class="nav-item px-3">
+        <a class="nav-link" href="{% url 'admin:index' %}">Panel</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+
+
+      <!-- <li class="nav-item d-md-down-none">
+      <a class="nav-link" href="#">
+        <i class="icon-location-pin"></i>
+      </a>
+    </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <img class="img-avatar" src="{% static "img/avatars/6.jpg" %}" alt="admin@bootstrapmaster.com">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="dropdown-header text-center">
+            <strong>Cuenta</strong>
+          </div>
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" href="#">
+            <i class="fa fa-lock"></i> Salir</a>
+        </div>
+      </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </header>
+  {% endblock NAVBAR %}
+
+
+  <div class="app-body">
+
+
+
+
+    {% block SIDEBAR %}
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">
+              <i class="nav-icon icon-speedometer"></i> Panel
+              <span class="badge badge-primary">NEW</span>
+            </a>
+          </li>
+
+          <li class="nav-title">Administracion</li>
+          <li class="nav-item nav-dropdown">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon material-icons">portrait</i> Pre-Registro</a>
+              <ul class="nav-dropdown-items">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'admisiones:registro' %}">
+                        <i class="nav-icon material-icons">add_box</i>pre-Inscripcion</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'admisiones:registro_list' %}">
+                        <i class="nav-icon material-icons">sort</i>Listar Registros</a>
+                  </li>
+
+              </ul>
+            </li>
+
+          <li class="nav-item nav-dropdown">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                <i class="nav-icon icon-cursor"></i> Control Escolar</a>
+              <ul class="nav-dropdown-items">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <i class="nav-icon icon-calculator"></i>inicio</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <i class="nav-icon icon-calculator"></i>otro</a>
+                  </li>
+
+              </ul>
+            </li>
+          <li class="nav-item nav-dropdown">
+              <a class="nav-link nav-dropdown-toggle" href="#">
+                  <i class="material-icons nav-icon">attach_money</i>Finanzas</a>
+
+              <ul class="nav-dropdown-items">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <i class="nav-icon icon-calculator"></i>Pagos</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        <i class="nav-icon icon-calculator"></i>Ver Pagos</a>
+                  </li>
+
+              </ul>
+            </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="typography.html">
+              <i class="nav-icon icon-pencil"></i> Typography</a>
+          </li>
+          <li class="nav-title">Components</li>
+
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-cursor"></i> Buttons</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="buttons/buttons.html">
+                  <i class="nav-icon icon-cursor"></i> Buttons</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="divider"></li>
+          <li class="nav-title">Extras</li>
+
+        </ul>
+      </nav>
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
+    {% endblock SIDEBAR %}
+
+
+    <main class="main">
+
+      {% block BREADCRUMB %}
+      <!-- Breadcrumb-->
+      <!-- <ol class="breadcrumb">
+        <li class="breadcrumb-item">Inicio</li>
+        <li class="breadcrumb-item">
+          <a href="#">Admin</a>
+        </li>
+        <li class="breadcrumb-item active">Dashboard</li> -->
+        <!-- Breadcrumb Menu-->
+        <!-- <li class="breadcrumb-menu d-md-down-none">
+          <div class="btn-group" role="group" aria-label="Button group">
+            <a class="btn" href="./">
+              <i class="icon-graph"></i>  Dashboard</a>
+            <a class="btn" href="#">
+              <i class="icon-settings"></i>  Settings</a>
+          </div>
+        </li>
+      </ol> -->
+      {% endblock BREADCRUMB %}
+
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+          {% block CONTENIDO %}
+
+          {% endblock CONTENIDO %}
+
+        </div>
+      </div>
+    </main>
+
+
+    <aside class="aside-menu">
+      {% block menu_derecho %}
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#timeline" role="tab">
+            <i class="icon-list"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+            <i class="icon-speech"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+            <i class="icon-settings"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- Tab panes-->
+      <div class="tab-content">
+        <div class="tab-pane active" id="timeline" role="tabpanel">
+          <div class="list-group list-group-accent">
+            <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Today</div>
+
+
+            <div class="list-group-item list-group-item-accent-secondary bg-light text-center font-weight-bold text-muted text-uppercase small">Tomorrow</div>
+            <div class="list-group-item list-group-item-accent-danger list-group-item-divider">
+
+
+
+
+            </div>
+
+
+          </div>
+        </div>
+        <div class="tab-pane p-3" id="messages" role="tabpanel">
+          <div class="message">
+            <div class="py-3 pb-5 mr-3 float-left">
+              <div class="avatar">
+                <img class="img-avatar" src="{% static "img/avatars/7.jpg" %} " alt=" admin@bootstrapmaster.com">
+                <span class="avatar-status badge-success"></span>
+              </div>
+            </div>
+            <div>
+              <small class="text-muted">Lukasz Holeczek</small>
+              <small class="text-muted float-right mt-1">1:52 PM</small>
+            </div>
+            <div class="text-truncate font-weight-bold">Lorem ipsum dolor sit amet</div>
+            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+              incididunt...</small>
+          </div>
+          <hr>
+
+
+
+
+        </div>
+        <div class="tab-pane p-3" id="settings" role="tabpanel">
+          <h6>Settings</h6>
+
+        </div>
+      </div>
+      {% endblock menu_derecho %}
+
+    </aside>
+  </div>
+
+
+  <footer class="app-footer">
+    <div>
+      <a href="https://coreui.io">CoreUI</a>
+      <span>&copy; 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>COLMEX</span>
+    </div>
+  </footer>
+
+  <!-- CoreUI and necessary plugins-->
+  <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+  <script src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %} "></script>
+  <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %} "></script>
+  <script src="{% static 'node_modules/pace-progress/pace.min.js' %} "></script>
+  <script src="{% static 'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js' %} "></script>
+  <script src="{% static 'node_modules/@coreui/coreui/dist/js/coreui.min.js' %} "></script>
+  <!-- Plugins and scripts required by this view-->
+  <script src="{% static 'node_modules/chart.js/dist/Chart.min.js' %} "></script>
+  <script src="{% static 'node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block script %}
+
+  {% endblock script %}
+</body>
+
+</html>

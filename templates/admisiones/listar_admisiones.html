@@ -1,0 +1,33 @@
+ {% extends 'admin/base_colmex.html'%}
+ {% block CONTENIDO %}
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Dia</th>
+      <th scope="col">Nacionalidad</th>
+      <th scope="col">Licenciatura</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for prsto in object_list %}
+<tr>
+      <th scope="row">{{prsto.id}}</th>
+      <td>{{prsto.prospecto_nombre}} {{prsto.prospecto_apelldo_m}} {{prsto.prospecto_apelldo_p}}</td>
+      <td>{{prsto.prospecto_dia_interes}}</td>
+      <td>{{prsto.prospecto_nacionalidad}}</td>
+      <td>{{prsto.prospecto_liceciatura}}</td>
+      <td>
+      {% comment %} <a class="btn btn-square btn-primary btn-sm" href="#" role="button"><i class="material-icons">remove_red_eye</i></a> {% endcomment %}
+      <a class="btn btn-square btn-warning btn-sm" href="{% url 'admisiones:registro_edit' prsto.id%}" role="button"><i class="material-icons">edit</i></a>
+      <a class="btn btn-square btn-danger btn-sm" href="{% url 'admisiones:registro_delete' prsto.id %}" role="button"><i class="material-icons">delete</i></a>
+      </td>
+    </tr>
+  {% endfor %}
+
+
+  </tbody>
+</table>
+ {% endblock CONTENIDO %}

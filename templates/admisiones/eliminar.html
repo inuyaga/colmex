@@ -1,0 +1,16 @@
+{% extends 'admin/base_colmex.html'%}
+
+{% block CONTENIDO %}
+
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    <div class="alert alert-danger" role="alert">
+      Esta seguro de eliminar {{ object }} ?.
+    </div>
+    <input class="btn btn-danger" type="submit" value="Si estoy seguro!">
+    <a class="btn btn-primary" onClick="javascript:history.go(-1)" role="button">Cancelar</a>
+  </form>
+</div>
+
+{% endblock %}
